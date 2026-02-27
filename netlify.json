@@ -1,0 +1,15 @@
+# Netlify proxy configuration for ProtonVPN-Next
+# This will transparently proxy all requests to the official Proton API
+
+[[redirects]]
+  # Match any path requested by the Android client (e.g., /vpn/v2/logicals, /auth/v4/info)
+  from = "/*"
+  
+  # Forward the exact path to the Proton API using the :splat placeholder
+  to = "https://vpn-api.proton.me/:splat"
+  
+  # 200 status code tells Netlify to act as a reverse proxy, not a redirect
+  status = 200
+  
+  # Force the proxy to handle all requests
+  force = true

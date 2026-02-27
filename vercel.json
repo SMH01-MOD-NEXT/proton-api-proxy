@@ -1,9 +1,0 @@
-{
-  "version": 2,
-  "rewrites": [
-    {
-      "source": "/api/:match*",
-      "destination": "https://vpn-api.proton.me/:match*"
-    }
-  ]
-}
